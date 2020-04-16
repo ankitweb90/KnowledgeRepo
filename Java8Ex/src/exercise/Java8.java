@@ -66,9 +66,6 @@ public class Java8 {
 		  Stream<String> stream3 = Files.lines(Paths.get("file3.txt"), Charset.defaultCharset());
 		  Stream<String> stream4 = Files.lines(Paths.get("file4.txt"), Charset.defaultCharset());
 		  
-		  
-		//  stream1.map(e -> e.toUpperCase()).forEach(e -> System.out.println(e));
-		  
 		  Stream<Stream<String>> str = Stream.of(stream1, stream2, stream3, stream4);
 		 
 		  Stream<String> str1 = str.flatMap(s -> s);
@@ -83,7 +80,7 @@ public class Java8 {
 		  
 		  System.out.println(set.size());
 		  
-		  int[] findScore = new int[]{1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+//		  int[] findScore = new int[]{1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 	
 		  Map<String, Integer> map = set.stream()
 				.collect(Collectors.toMap(e->e, e->getScoreFromStr(e)));
